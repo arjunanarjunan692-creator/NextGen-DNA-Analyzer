@@ -11,25 +11,60 @@ st.set_page_config(page_title="NextGen DNA Analyzer", layout="wide", initial_sid
 
 st.markdown("""
     <style>
-    .stApp { background: #f8fafc; color: #0f172a; }
-    section[data-testid="stSidebar"] { background: #ffffff !important; border-right: 1px solid #e2e8f0; }
-    .glass-card { background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-    .metric-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 10px; text-align: center; }
-    .metric-title { color: #334155; font-size: 14px; font-weight: 500; }
-    .metric-val { font-size: 26px; font-weight: bold; color: #16a34a; }
-    .alignment-box { font-family: monospace; background-color: #0f172a; color: #38bdf8; padding: 20px; border-radius: 8px; font-size: 16px; white-space: pre-wrap; line-height: 1.5; letter-spacing: 2px;}
-    h1, h2, h3 { color: #1e293b !important; }
-    
-    .system-top-bar {
-        background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
-        padding: 15px 25px;
-        border-radius: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+        /* Force body and sidebar backgrounds to stay light white/clean */
+        .stApp, section[data-testid="stSidebar"] {
+            background-color: #f8fafc !important;
+            background: #f8fafc !important;
+        }
+        
+        /* Overrides both Light and Dark mode font colors globally to solid black */
+        .stApp p, .stApp span, .stApp h1, .stApp h2, .stApp h3, .stApp label, .stApp div,
+        section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] span, 
+        section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] h1,
+        section[data-testid="stSidebar"] h2, section[data-testid="stSidebar"] h3 {
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+        }
+        
+        /* Maintain your custom design cards but force black text inside them */
+        .glass-card { 
+            background: #ffffff; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            padding: 25px; 
+            margin-bottom: 15px;
+            color: #000000 !important;
+        }
+        .metric-box { 
+            background: #f0fdf4; 
+            border: 1px solid #bbf7d0; 
+            padding: 15px; 
+            border-radius: 10px; 
+            text-align: center;
+            color: #000000 !important;
+        }
+        .metric-title { color: #334155 !important; font-size: 14px; font-weight: 500; }
+        .metric-val { font-size: 26px; font-weight: bold; color: #16a34a !important; }
+        
+        .alignment-box { 
+            font-family: monospace; 
+            background-color: #0f172a; 
+            color: #38bdf8 !important; 
+            padding: 20px; 
+            border-radius: 8px;
+            -webkit-text-fill-color: #38bdf8 !important;
+        }
+        
+        .system-top-bar {
+            background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+            padding: 15px 25px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff !important;
+        }
+        
+        h1, h2, h3 { color: #1e293b !important; }
     </style>
 """, unsafe_allow_html=True)
 
