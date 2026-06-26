@@ -18,12 +18,18 @@ st.markdown("""
         }
         
         /* Overrides both Light and Dark mode font colors globally to solid black */
-        .stApp p, .stApp span, .stApp h1, .stApp h2, .stApp h3, .stApp label, .stApp div,
+        .stApp p, .stApp span, .stApp h1, .stApp h2, .stApp h3, .stApp label,
         section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] span, 
         section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] h1,
         section[data-testid="stSidebar"] h2, section[data-testid="stSidebar"] h3 {
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
+        }
+        
+        /* FIX: Force Input box typed text and Button text to be crisp White */
+        input, select, textarea, button, [data-testid="baseButton-secondary"] p, [data-testid="stTextInput"] div {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
         }
         
         /* Maintain your custom design cards but force black text inside them */
@@ -55,13 +61,18 @@ st.markdown("""
             -webkit-text-fill-color: #38bdf8 !important;
         }
         
+        /* FIX: Top bar cards text to be solid crisp White */
+        .system-top-bar p, .system-top-bar span, .system-top-bar h1, .system-top-bar h2, .system-top-bar h3, .system-top-bar div {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        
         .system-top-bar {
             background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
             padding: 15px 25px;
             border-radius: 12px;
             display: flex;
             justify-content: space-between;
-            color: #ffffff !important;
         }
         
         h1, h2, h3 { color: #1e293b !important; }
