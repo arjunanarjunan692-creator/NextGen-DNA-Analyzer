@@ -33,18 +33,20 @@ st.markdown("""
             -webkit-text-fill-color: #000000 !important;
         }
         
-        /* ULTRA FIX: Force ALL Streamlit Buttons to have solid dark background and bright white text */
+        /* RED BUTTON FIX: Force ALL Streamlit Buttons to be vibrant Red with Solid Text */
         button, [data-testid^="baseButton"], .stButton button, [role="button"] {
-            background-color: #1e293b !important;
-            background: #1e293b !important;
+            background-color: #ff4b4b !important;
+            background: #ff4b4b !important;
             color: #ffffff !important;
-            border: 1px solid #1e293b !important;
+            border: 1px solid #ff4b4b !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
         }
         
-        /* Force button text inside paragraph/span/div tags to stay white */
+        /* Force button text inside tags to be crisp White for maximum readability */
         button p, button span, button div, [data-testid^="baseButton"] p, [data-testid^="baseButton"] span, [data-testid^="baseButton"] div {
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
+            font-weight: bold !important;
         }
         
         /* FIX: Force Sidebar close/open arrow icon to be visible black */
