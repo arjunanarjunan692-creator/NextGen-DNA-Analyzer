@@ -34,14 +34,15 @@ st.markdown("""
         }
         
         /* ULTRA FIX: Force ALL Streamlit Buttons to have solid dark background and bright white text */
-        button, [data-testid^="baseButton"], .stButton button {
+        button, [data-testid^="baseButton"], .stButton button, [role="button"] {
             background-color: #1e293b !important;
+            background: #1e293b !important;
             color: #ffffff !important;
             border: 1px solid #1e293b !important;
         }
         
-        /* Force button text inside paragraph/span tags to stay white */
-        button p, button span, [data-testid^="baseButton"] p, [data-testid^="baseButton"] span {
+        /* Force button text inside paragraph/span/div tags to stay white */
+        button p, button span, button div, [data-testid^="baseButton"] p, [data-testid^="baseButton"] span, [data-testid^="baseButton"] div {
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
         }
