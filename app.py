@@ -26,20 +26,22 @@ st.markdown("""
             -webkit-text-fill-color: #000000 !important;
         }
         
-        /* FIX: Force Input box backgrounds to be clean white and text to be solid black */
-        input, select, textarea, [data-testid="stTextInput"] div, [data-testid="stWidgetLabel"] {
+        /* FIX: Force All Input and Textarea box backgrounds to be clean white and text to be solid black */
+        input, select, textarea, [data-testid="stTextInput"] div, [data-testid="stTextArea"] div, [data-testid="stWidgetLabel"] {
             background-color: #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
         }
         
-        /* FIX: Force Buttons (like Authenticate & Logout) to have a visible background and white text */
-        button, [data-testid="baseButton-secondary"], [data-testid="baseButton-primary"] {
-            background-color: #1e293b !important; /* Dark blue/slate button background */
+        /* ULTRA FIX: Force ALL Streamlit Buttons to have solid dark background and bright white text */
+        button, [data-testid^="baseButton"], .stButton button {
+            background-color: #1e293b !important;
             color: #ffffff !important;
-            -webkit-text-fill-color: #ffffff !important;
+            border: 1px solid #1e293b !important;
         }
-        button p, [data-testid="baseButton-secondary"] p {
+        
+        /* Force button text inside paragraph/span tags to stay white */
+        button p, button span, [data-testid^="baseButton"] p, [data-testid^="baseButton"] span {
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
         }
@@ -98,7 +100,6 @@ st.markdown("""
         h1, h2, h3 { color: #1e293b !important; }
     </style>
 """, unsafe_allow_html=True)
-
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
 
