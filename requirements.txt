@@ -1,0 +1,4 @@
+biopython
+fpdf2
+plotly
+pandas
