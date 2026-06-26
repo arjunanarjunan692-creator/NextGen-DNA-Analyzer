@@ -26,10 +26,30 @@ st.markdown("""
             -webkit-text-fill-color: #000000 !important;
         }
         
-        /* FIX: Force Input box typed text and Button text to be crisp White */
-        input, select, textarea, button, [data-testid="baseButton-secondary"] p, [data-testid="stTextInput"] div {
+        /* FIX: Force Input box backgrounds to be clean white and text to be solid black */
+        input, select, textarea, [data-testid="stTextInput"] div, [data-testid="stWidgetLabel"] {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+        }
+        
+        /* FIX: Force Buttons (like Authenticate & Logout) to have a visible background and white text */
+        button, [data-testid="baseButton-secondary"], [data-testid="baseButton-primary"] {
+            background-color: #1e293b !important; /* Dark blue/slate button background */
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
+        }
+        button p, [data-testid="baseButton-secondary"] p {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        
+        /* FIX: Force Sidebar close/open arrow icon to be visible black */
+        section[data-testid="stSidebarCollapsedControl"] button svg, 
+        button[data-testid="collapsedControl"] svg,
+        [data-testid="stSidebar"] button svg {
+            fill: #000000 !important;
+            color: #000000 !important;
         }
         
         /* Maintain your custom design cards but force black text inside them */
