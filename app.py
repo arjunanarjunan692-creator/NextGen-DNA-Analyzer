@@ -122,16 +122,14 @@ if not st.session_state['logged_in']:
         show_register_page()
         st.markdown('</div>', unsafe_allow_html=True)
 else:
-    st.markdown(f"""
-        <div class="system-top-bar">
-            <div style="color: #38bdf8; font-weight: 700; font-size: 14px; letter-spacing:0.5px;">
-                ⚙️ GENOMIC OPERATIONAL KERNEL ACTIVE
-            </div>
-            <div style="color: #ffffff; font-size: 15px; font-weight: 600;">
-                🚀 FOUNDER & CHIEF ARCHITECT: <span style="color: #a3e635; font-weight: 800; letter-spacing:0.5px;">ARJUNAN G</span>
-            </div>
+    st.markdown('''
+    <div class="system-top-bar" style="justify-content: center; text-align: center;">
+        <div>
+            <span style="font-size: 18px; font-weight: 800; letter-spacing: 1px;">DEVELOPED BY ARJUNAN G</span><br>
+            <span style="font-size: 11px; opacity: 0.8;">Genomics Systems Architect • V2.0 Stable</span>
         </div>
-    """, unsafe_allow_html=True)
+    </div>
+''', unsafe_allow_html=True)
 
     st.sidebar.success(f"Verified: {st.session_state.get('user_name', 'User')}")
     st.sidebar.markdown("---")
