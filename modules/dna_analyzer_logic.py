@@ -192,7 +192,7 @@ def generate_high_detailed_report(sequence, metrics, mutations, homology):
     
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(255, 255, 255)
-    pdf.text(15, 38, "CHIEF ENGINEER: ARJUNAN G (FOUNDER)")
+    pdf.text(15, 38, "DEVELOPED BY: ARJUNAN G")
     pdf.text(130, 38, "PLATFORM STATUS: SECURE V2.0 STABLE")
     
     pdf.set_text_color(15, 21, 42)
@@ -270,7 +270,11 @@ def generate_high_detailed_report(sequence, metrics, mutations, homology):
     pdf.set_text_color(100, 116, 139)
     pdf.cell(190, 4, "NextGen DNA Computational Platform - Version 2.0 Enterprise Secure Product", align="C", ln=True)
     
-    return bytes(pdf.output())
+    # Standard fix for byte output redirection in fpdf/fpdf2
+    try:
+        return bytes(pdf.output())
+    except Exception:
+        return pdf.output(dest='S').encode('latin-1')
 
 def parse_fasta_file(file_bytes):
     text_data = file_bytes.decode("utf-8")
